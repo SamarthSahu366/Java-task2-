@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RoomRepository extends JpaRepository<RoomEntity, Long> {
-    // You can add custom queries here if needed
 }

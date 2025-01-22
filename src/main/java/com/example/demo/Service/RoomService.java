@@ -17,7 +17,6 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    // Method to get all rooms
     public List<RoomDTO> getAllRooms() {
         List<RoomEntity> rooms = roomRepository.findAll(); // Retrieve all rooms from the database
         return rooms.stream()
@@ -25,7 +24,6 @@ public class RoomService {
                 .collect(Collectors.toList()); // Convert entities to DTOs
     }
 
-    // Method to book a room
     public String bookRoom(Long roomId) {
         Optional<RoomEntity> roomOptional = roomRepository.findById(roomId);
         if (roomOptional.isPresent()) {
@@ -37,7 +35,6 @@ public class RoomService {
         return "Room not found.";
     }
 
-    // Method to update a room's details
     public RoomEntity updateRoom(Long roomId, String roomType) {
         Optional<RoomEntity> roomOptional = roomRepository.findById(roomId);
         if (roomOptional.isPresent()) {
@@ -53,7 +50,6 @@ public class RoomService {
         Optional<RoomEntity> roomOptional = roomRepository.findById(roomId);
         if (roomOptional.isPresent()) {
             RoomEntity room = roomOptional.get();
-            // Apply patch logic here
             return "Room updated successfully";
         } else {
             throw new UserNotFoundException("Room with ID " + roomId + " not found.");

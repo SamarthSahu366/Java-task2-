@@ -6,10 +6,8 @@ package com.example.demo.DTO;
         private String roomType;
         private Double price;
 
-        // Default constructor
         public RoomDTO() {}
 
-        // Parameterized constructor
         public RoomDTO(String roomNumber, String roomType, Double price) {
             this.roomNumber = roomNumber;
             this.roomType = roomType;
@@ -19,7 +17,6 @@ package com.example.demo.DTO;
             public RoomDTO(Long id, String roomNumber, String roomType, boolean booked) {
             }
 
-            // Getters and Setters
         public String getRoomNumber() {
             return roomNumber;
         }

@@ -8,11 +8,11 @@ public class RoomEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // Unique identifier for each room
+    private Long id;
 
-    private String roomNumber;  // Room number, e.g., "101"
-    private String roomType;    // Type of the room, e.g., "Deluxe", "Standard"
-    private Double price;       // Price of the room per night
+    private String roomNumber;
+    private String roomType;
+    private Double price;
 
     public RoomEntity(Long id, String roomNumber, String roomType, Double price) {
         this.id = id;
@@ -56,7 +56,4 @@ public class RoomEntity {
     public boolean isBooked() {return true;
     }
 
-//    public Object isBooked() {
-//
-//    }
 }

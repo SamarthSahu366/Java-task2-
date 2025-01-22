@@ -18,16 +18,14 @@ public class RoomControllers {
         this.roomService = roomService;
     }
 
-    // GET - Get all rooms
     @GetMapping(path = "/rooms")
     public List<RoomDTO> getAllRooms() {
-        return roomService.getAllRooms(); // Call the service to get all rooms
+        return roomService.getAllRooms();
     }
 
-    // POST - Book a room
     @PostMapping(path = "/rooms/book/{roomId}")
     public String bookRoom(@PathVariable Long roomId) {
-        return roomService.bookRoom(roomId); // Call the service to book a room
+        return roomService.bookRoom(roomId);
     }
 
     @PutMapping("/{roomId}")
